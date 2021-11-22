@@ -13,7 +13,8 @@ class AuthService extends ChangeNotifier {
   Future<String?> createUser(String email, String password) async {
     final Map<String, dynamic> authData = {
       'email': email,
-      'password': password
+      'password': password,
+      'returnSecureToken': true
     };
 
     final url =
@@ -35,7 +36,8 @@ class AuthService extends ChangeNotifier {
   Future<String?> login(String email, String password) async {
     final Map<String, dynamic> authData = {
       'email': email,
-      'password': password
+      'password': password,
+      'returnSecureToken': true
     };
 
     final url = Uri.https(
